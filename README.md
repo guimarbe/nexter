@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/guimarbe/nexter">
-    <img src="img/logo.png" alt="Logo" width="153" height="106">
+    <img src="img/logo.png" alt="Logo" width="455" height="100">
   </a>
 </p>
 
