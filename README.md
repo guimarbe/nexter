@@ -32,7 +32,7 @@ Virtual site of a luxury real estate company, selling the very best homes in the
 
 Nexter is a web page example developed by Jonas Schmedtmann in the Udemy course [Advanced CSS and Sass course](https://www.udemy.com/course/advanced-css-and-sass/). I wrote this code to learn the advanced techniques used nowadays to develop modern web pages. Besides, this code will help to develop other webpages as a code reference.
 
-The focusing part of this project is the use of **flexbox**. All the project uses a grid layout, so if you are interested to learn how to lay a web page using grid components, this is perfect for you!
+The focusing part of this project is the use of display: **grid**. All the project uses a grid layout, so if you are interested to learn how to lay a web page using grid components, this is perfect for you!
 
 **Notes**
 >I've applied some personal changes in this project, so the final result may not be the same as the original code developed by Jonas.
