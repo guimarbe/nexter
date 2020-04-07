@@ -1,0 +1,83 @@
+.gallery {
+	background-color: $color-grey-light-1;
+	grid-column: full-start / full-end;
+
+	display: grid;
+	grid-template-rows: repeat(7, 5vw); // 5% del ancho de la pantalla es perfecto para el alto de cada elemento
+	grid-template-columns: repeat(8, 1fr);
+	grid-gap: 1.5rem;
+	padding: 1.5rem;
+
+	/*	El truco para crear la galería de imágenes es establecer bien los parámetros
+	*	de .gallery__img y, a partir de aquí, jugar con los tamaños de filas
+	*	y columnas de cada elemento en .gallery__item. Esto se ve mejor si usamos
+	*	la disposición rejilla de Firefox Quantum.
+	*	Por desgracia, no es muy adaptativa a móviles: el gap se hace gigante y
+	*	las imágenes diminutas.
+	**/
+	&__item {
+		// Primera fila
+		&--1 {
+			grid-row: 1 / span 2;
+			grid-column: 1 / span 2;
+		}
+		&--2 {
+			grid-row: 1 / span 3;
+			grid-column: 3 / span 3;
+		}
+		&--3 {
+			grid-row: 1 / span 2;
+			//grid-column: 6 / 7;
+		}
+		&--4 {
+			grid-row: 1 / span 2;
+			grid-column: 7 / span 2;
+		}
+		// Segunda fila
+		&--5 {
+			grid-row: 3 / span 3;
+			grid-column: 1 / span 2;
+		}
+		&--6 {
+			grid-row: 4 / span 2;
+			grid-column: 3 / span 2;
+		}
+		// No hace falta hacer la 7, ya que es sólo 1x1 en su posición fija
+		&--8 {
+			grid-row: 3 / span 2;
+			grid-column: 6 / span 2;
+		}
+		&--9 {
+			grid-row: 3 / span 3;
+			//grid-column: 8 / 9;
+		}
+		// Tercera fila
+		&--10 {
+			grid-row: 6 / span 2;
+			//grid-column: 1 / 2;
+		}
+		&--11 {
+			grid-row: 6 / span 2;
+			grid-column: 2 / span 2;
+		}
+		&--12 {
+			grid-row: 6 / span 2;
+			//grid-column: 4 / 5;
+		}
+		&--13 {
+			grid-row: 5 / span 3;
+			grid-column: 5 / span 3;
+		}
+		&--14 {
+			grid-row: 6 / span 2;
+			//grid-column: 8 / 9;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover; // Sólo funciona si intruducimos tanto ancho como alto
+	}
+}

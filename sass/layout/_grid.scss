@@ -1,0 +1,33 @@
+.container {
+	display: grid;
+	grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+	/*	Hemos creado 6 filas: la primera con el 80% de la altura de la pantalla,
+	*	La segunda con el mínimo del contenido, la tercera con el 40% del ancho
+	*	de la pantalla y las tres últimas de su contenido.
+	**/
+	grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+	[center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+	/*	Generamos 8 columnas iguales con 1140px/8col = 142.5px -> 14rem aprox.
+	*	Tenemos, en total, la columna del sidebar, las 8 del container y 2 más
+	*	que sirven para mantener el equilibrio del 100% del viewport.
+	*
+	*	Nota: nombramos solo las columnas, porque la web va a ser adaptativa por
+	*	su ancho de pantalla, no por sus filas.
+	*/
+
+	@media only screen and (max-width: $bp-large) {
+		display: grid;
+		grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+		grid-template-columns: [full-start] minmax(6rem, 1fr)
+		[center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+	}
+
+	@media only screen and (max-width: $bp-medium) {
+		display: grid;
+		grid-template-rows: 6rem calc(100vh - 6rem);
+		/*	Hemos añadido una fila más y hemos usado calc() para establecer que el header
+		*	sea igual de alto que la pantalla del dispositivo, menos los 6rem de la barra de navegación,
+		*	ya que si no lo hacemos, al hacer scroll aún seguiriamos viendo el header restante.
+		**/
+	}
+}
